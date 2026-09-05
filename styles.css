@@ -1,434 +1,1478 @@
-/* =====================================================
-   RESPONSIVE - ADAPTACIÓN PARA TODOS LOS DISPOSITIVOS
-   NO MODIFICA EL DISEÑO ORIGINAL
-===================================================== */
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
 
-/* =====================================================
-   TABLETS Y LAPTOPS PEQUEÑAS
-===================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 
-@media screen and (max-width: 1024px) {
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #eaf9ff;
+  background: #030712 url("assets/Portada.png") center / cover fixed no-repeat;
+}
 
-    section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
 
-    .container-informacion {
-        width: 100%;
-        max-width: 900px;
-        margin: auto;
-    }
+nav {
+  width: 100%;
+  min-height: 70px;
 
-    .Inicio {
-        gap: 40px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .search-bar h1 {
-        font-size: 40px;
-    }
+  padding: 15px 30px;
 
-    .cards-container {
-        gap: 25px;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    .card-plan {
-        width: 320px;
-    }
+  background: rgba(0, 0, 0, 0.60);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 
+  border-bottom: 1px solid rgba(0, 195, 255, 0.25);
+
+  box-shadow:
+    0 4px 25px rgba(0, 195, 255, 0.15);
+}
+
+nav ul {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 10px 28px;
+
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+
+  color: #00c3ff;
+  text-decoration: none;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-weight: 600;
+
+  padding: 7px 4px;
+
+  position: relative;
+
+  text-shadow:
+    0 0 5px #00c3ff,
+    0 0 10px #00fff0;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+nav ul li a::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #00fff0;
+
+  box-shadow: 0 0 8px #00fff0;
+
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   BURBUJAS
+   ========================================================= */
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
+section {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  padding:
+    clamp(70px, 8vw, 120px)
+    clamp(20px, 5vw, 80px);
+
+  color: #eaf9ff;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+/* Oscurecer ligeramente las imágenes de fondo */
+
+section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 30, 0.20),
+      rgba(0, 0, 0, 0.40)
+    );
+
+  z-index: 0;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   FONDOS
+   ========================================================= */
+
+#inicio {
+  background-image: url("assets/Portada.png");
+}
+
+#Quienes_Somos {
+  background-image: url("assets/Portada2.png");
+}
+
+#Mision {
+  background-image: url("assets/Portada3.png");
+}
+
+#Plans {
+  background-image: url("assets/Portada4.png");
+}
+
+#Portafolio {
+  background-image: url("assets/Portada6.png");
+}
+
+#Contactanos {
+  background-image: url("assets/Portada11.png");
+}
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+
+.Inicio {
+  min-height: calc(100vh - 70px);
+
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(300px, 1.5fr);
+
+  align-items: center;
+  justify-items: center;
+
+  gap: clamp(30px, 6vw, 100px);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: clamp(180px, 25vw, 380px);
+  max-width: 100%;
+
+  border-radius: 50%;
+
+  filter:
+    drop-shadow(0 0 15px #00c3ff)
+    drop-shadow(0 0 35px rgba(0, 255, 255, 0.5));
+
+  transition: transform 0.4s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.search-bar {
+  width: min(700px, 100%);
+
+  text-align: center;
+
+  padding: clamp(25px, 4vw, 55px);
+
+  border-radius: 25px;
+
+  background: rgba(0, 0, 0, 0.42);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(0, 195, 255, 0.2);
+
+  box-shadow:
+    0 0 35px rgba(0, 195, 255, 0.18),
+    inset 0 0 25px rgba(0, 195, 255, 0.04);
+}
+
+.search-bar h1 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.15;
+
+  margin-bottom: 25px;
+
+  background: linear-gradient(
+    90deg,
+    #00fff0,
+    #00c3ff,
+    #ffffff,
+    #00fff0
+  );
+
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientText 5s linear infinite;
+}
+
+.search-bar p {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.8;
+  color: #d9f7ff;
+}
+
+@keyframes gradientText {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 300% center;
+  }
+}
+
+/* =========================================================
+   CONTENEDORES
+   ========================================================= */
+
+.container-informacion {
+  width: min(1200px, 100%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(30px, 6vw, 80px);
+
+  flex-wrap: wrap;
+
+  margin: auto;
+}
+
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
+.portada-cuadrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 0 1 350px;
+}
+
+.portada-cuadrado img {
+  width: min(320px, 80vw);
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 0 25px rgba(0, 195, 255, 0.45),
+    0 0 60px rgba(0, 195, 255, 0.15);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.portada-cuadrado img:hover {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.7),
+    0 0 70px rgba(0, 195, 255, 0.25);
+}
+
+/* =========================================================
+   TARJETAS DE INFORMACIÓN
+   ========================================================= */
+
+section .card {
+  width: min(550px, 100%);
+
+  padding: clamp(25px, 4vw, 50px);
+
+  border-radius: 25px;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0, 195, 255, 0.18);
+
+  box-shadow:
+    0 0 30px rgba(0, 195, 255, 0.25),
+    inset 0 0 20px rgba(0, 195, 255, 0.03);
+
+  line-height: 1.8;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+section .card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 0 45px rgba(0, 195, 255, 0.4),
+    inset 0 0 20px rgba(0, 195, 255, 0.05);
+}
+
+section .card p {
+  color: #e2f8ff;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+}
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+section h1,
+section h2 {
+  margin-bottom: 20px;
+
+  font-size: clamp(1.7rem, 3vw, 3rem);
+
+  line-height: 1.2;
+
+  letter-spacing: clamp(1px, 0.3vw, 3px);
+
+  text-transform: uppercase;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00fff0,
+      #00c3ff,
+      #00fff0
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 20px #00fff0,
+    0 0 40px #00c3ff;
+}
+
+/* =========================================================
+   QUIENES SOMOS
+   ========================================================= */
+
+#Quienes_Somos .texto-izquierda {
+  text-align: left;
+}
+
+/* =========================================================
+   MISIÓN
+   ========================================================= */
+
+#Mision {
+  padding: clamp(70px, 8vw, 120px) 5%;
+}
+
+#Mision .container-informacion {
+  width: min(1100px, 100%);
+}
+
+#Mision .portada-cuadrado {
+  flex: 0 1 180px;
+}
+
+#Mision .portada-cuadrado img {
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(100px, 12vw, 160px);
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  padding: 15px;
+
+  box-shadow:
+    0 0 30px rgba(0, 195, 255, 0.5);
+}
+
+#Mision .texto-derecha {
+  text-align: center;
+}
+
+/* =========================================================
+   PLANS & SERVICES
+   ========================================================= */
+
+#Plans {
+  padding:
+    clamp(70px, 8vw, 110px)
+    20px;
+}
+
+#Plans .container-informacion {
+  flex-direction: column;
+  width: min(1100px, 100%);
+}
+
+#Plans h1 {
+  margin-bottom: clamp(30px, 5vw, 60px);
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+
+  color: #ffffff;
+}
+
+.cards-container {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(250px, 350px));
+
+  justify-content: center;
+
+  gap: clamp(20px, 4vw, 45px);
+}
+
+.card-plan {
+  width: 100%;
+
+  min-height: 430px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: clamp(25px, 3vw, 40px);
+
+  background: rgba(10, 10, 25, 0.65);
+
+  border: 1px solid rgba(255, 0, 200, 0.35);
+
+  border-radius: 25px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 25px rgba(255, 0, 200, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.card-plan:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(255, 0, 200, 0.8);
+
+  box-shadow:
+    0 0 40px rgba(255, 0, 200, 0.3),
+    inset 0 0 20px rgba(255, 0, 200, 0.08);
+}
+
+.card-plan h2 {
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.card-plan p {
+  color: #d8e8ef;
+
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+.card-plan button {
+  width: 100%;
+
+  padding: 13px 25px;
+
+  border: none;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff00cc,
+      #3333ff
+    );
+
+  color: white;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 15px rgba(255, 0, 200, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-plan button:hover {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 0 30px rgba(255, 0, 200, 0.5);
+}
+
+.card-plan.destacado {
+  border-color: rgba(255, 0, 255, 0.7);
+
+  box-shadow:
+    0 0 35px rgba(255, 0, 255, 0.22);
+}
+
+/* =========================================================
+   PORTAFOLIO
+   ========================================================= */
+
+#Portafolio {
+  min-height: 100vh;
+
+  padding:
+    clamp(80px, 10vw, 140px)
+    clamp(20px, 6vw, 90px);
+
+  text-align: left;
+}
+
+#Portafolio .container-informacion {
+  width: min(1150px, 100%);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 0.7fr)
+    minmax(300px, 1.3fr);
+
+  align-items: center;
+
+  gap: clamp(30px, 7vw, 100px);
+}
+
+#Portafolio h1 {
+  display: inline-block;
+
+  padding: 12px 22px;
+  margin: 0;
+
+  background: #23156b;
+
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 12px #00c3ff;
+
+  box-shadow:
+    0 0 15px rgba(35, 21, 107, 0.8),
+    0 0 30px rgba(0, 195, 255, 0.2);
+
+  position: relative;
+  z-index: 10;
+
+  visibility: visible;
+  opacity: 1;
 }
 
 
-/* =====================================================
+#Portafolio .informacion-portafolio {
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 0;
+}
+
+#Portafolio ul {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+#Portafolio li {
+  position: relative;
+
+  padding: 18px 20px 18px 35px;
+
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(8px);
+
+  color: #ffffff;
+
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+
+  line-height: 1.6;
+
+  border-left: 3px solid #ffcc33;
+
+  box-shadow:
+    0 0 15px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+#Portafolio li:hover {
+  transform: translateX(8px);
+
+  background: rgba(20, 20, 50, 0.65);
+}
+
+#Portafolio li::before {
+  content: "◆";
+
+  position: absolute;
+
+  left: 12px;
+  top: 18px;
+
+  color: #ffcc33;
+
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+#Contactanos {
+  min-height: 100vh;
+
+  padding:
+    clamp(70px, 8vw, 110px)
+    clamp(20px, 5vw, 70px);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 0.7fr)
+    minmax(280px, 1fr)
+    minmax(180px, 0.7fr);
+
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(30px, 5vw, 80px);
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 15, 0.2),
+      rgba(0, 0, 15, 0.4)
+    ),
+    url("assets/fondo-tecnologico.jpg")
+    center / cover no-repeat;
+}
+
+/* Logo */
+
+.logo-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-contacto img {
+  width: clamp(150px, 18vw, 260px);
+  max-width: 100%;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  padding: 10px;
+
+  filter:
+    drop-shadow(0 0 15px #00ffff)
+    drop-shadow(0 0 35px rgba(0, 255, 255, 0.3));
+
+  transition: transform 0.4s ease;
+}
+
+.logo-contacto img:hover {
+  transform: scale(1.05);
+}
+
+/* Formulario */
+
+.contact-info {
+  width: 100%;
+  max-width: 450px;
+
+  justify-self: center;
+}
+
+.contact-info form {
+  width: 100%;
+
+  padding: clamp(25px, 4vw, 40px);
+
+  border-radius: 20px;
+
+  background: rgba(0, 0, 20, 0.70);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0, 255, 255, 0.2);
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 255, 0.35);
+
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+
+  margin-bottom: 25px;
+}
+
+.contact-info input,
+.contact-info textarea {
+  display: block;
+
+  width: 100%;
+
+  margin: 12px 0;
+
+  padding: 13px 15px;
+
+  border: 1px solid rgba(0, 255, 255, 0.2);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.contact-info input::placeholder,
+.contact-info textarea::placeholder {
+  color: rgba(220, 250, 255, 0.65);
+}
+
+.contact-info input:focus,
+.contact-info textarea:focus {
+  border-color: #00ffff;
+
+  background: rgba(0, 255, 255, 0.06);
+
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.25);
+}
+
+.contact-info textarea {
+  min-height: 140px;
+
+  resize: vertical;
+}
+
+.contact-info button {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c3ff,
+      #0066ff
+    );
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 15px rgba(0, 195, 255, 0.3);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-info button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 30px rgba(0, 255, 255, 0.55);
+}
+
+/* =========================================================
+   REDES SOCIALES
+   ========================================================= */
+
+.redes-sociales {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.redes-sociales a {
+  width: min(180px, 100%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  padding: 12px;
+
+  border-radius: 15px;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  transform: translateY(-5px);
+
+  background: rgba(0, 255, 255, 0.08);
+}
+
+.redes-sociales img {
+  width: clamp(50px, 6vw, 80px);
+
+  height: auto;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.1);
+
+  filter:
+    drop-shadow(0 0 10px #00ffff)
+    drop-shadow(0 0 20px #00c3ff);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  width: 100%;
+
+  padding: 20px;
+
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  border-top: 1px solid rgba(0, 195, 255, 0.15);
+
+  color: #00c3ff;
+
+  font-size: clamp(0.8rem, 1vw, 1rem);
+
+  font-weight: 600;
+}
+
+/* =========================================================
    TABLETS
-===================================================== */
+   ========================================================= */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1000px) {
 
-    section {
-        padding-top: 110px;
-        padding-bottom: 70px;
-    }
+  nav {
+    padding: 12px 20px;
+  }
 
+  nav ul {
+    gap: 8px 18px;
+  }
 
-    /* ---------- MENÚ ---------- */
+  .Inicio {
+    grid-template-columns: 1fr;
+    text-align: center;
 
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+    min-height: auto;
 
-        gap: 10px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 
-        padding: 12px 10px;
-    }
+  .logo img {
+    width: clamp(180px, 35vw, 280px);
+  }
 
-    nav ul li a {
-        font-size: 13px;
-    }
+  .search-bar {
+    max-width: 750px;
+  }
 
+  #Portafolio .container-informacion {
+    grid-template-columns: 1fr;
 
-    /* ---------- INICIO ---------- */
+    text-align: center;
+  }
 
-    .Inicio {
-        flex-direction: column;
-        justify-content: center;
+  #Portafolio h1 {
+    margin: auto;
+  }
 
-        text-align: center;
+  #Portafolio .informacion-portafolio {
+    margin: auto;
+  }
 
-        gap: 30px;
-    }
+  #Contactanos {
+    grid-template-columns: 1fr 1fr;
 
-    .logo img {
-        width: 220px;
-        max-width: 70vw;
-    }
+    grid-template-areas:
+      "logo form"
+      "social social";
+  }
 
-    .search-bar {
-        width: 100%;
-        max-width: 650px;
-    }
+  .logo-contacto {
+    grid-area: logo;
+  }
 
-    .search-bar h1 {
-        font-size: 36px;
-        line-height: 1.2;
-    }
+  .contact-info {
+    grid-area: form;
+  }
 
-    .search-bar p {
-        font-size: 17px;
-    }
+  .redes-sociales {
+    grid-area: social;
 
-
-    /* ---------- QUIENES SOMOS ---------- */
-
-    .Informacion .container-informacion,
-    .Mision .container-informacion {
-
-        flex-direction: column;
-
-        gap: 30px;
-
-        width: 100%;
-    }
-
-    .portada-cuadrado {
-        width: 100%;
-        text-align: center;
-    }
-
-    .portada-cuadrado img {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 650px;
-    }
-
-
-    /* ---------- PLANES ---------- */
-
-    .cards-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .card-plan {
-        width: 45%;
-        min-width: 280px;
-        max-width: 360px;
-    }
-
-
-    /* ---------- PORTAFOLIO ---------- */
-
-    .informacion-portafolio {
-        width: 100%;
-        max-width: 700px;
-        margin: auto;
-    }
-
-    .Portafolio h1,
-    .movil h1 {
-        font-size: 32px;
-    }
-
-
-    /* ---------- CONTACTO ---------- */
-
-    .Contactanos {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .contact-info {
-        width: 100%;
-        max-width: 450px;
-    }
-
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
-
-/* =====================================================
+/* =========================================================
    CELULARES
-===================================================== */
+   ========================================================= */
 
-@media screen and (max-width: 600px) {
+@media (max-width: 700px) {
 
-    section {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+  html {
+    scroll-padding-top: 120px;
+  }
 
+  body {
+    background-attachment: scroll;
+  }
 
-    /* ---------- MENÚ ---------- */
+  section {
+    min-height: auto;
 
-    nav ul {
-        gap: 6px 10px;
-    }
+    padding:
+      80px
+      18px;
+  }
 
-    nav ul li a {
-        font-size: 11px;
-    }
+  /* NAV */
 
+  nav {
+    position: sticky;
 
-    /* ---------- INICIO ---------- */
+    padding: 12px 10px;
 
-    .Inicio {
-        min-height: 100vh;
+    min-height: auto;
+  }
 
-        padding-top: 130px;
+  nav ul {
+    gap: 5px 12px;
+  }
 
-        gap: 25px;
-    }
+  nav ul li a {
+    font-size: 0.78rem;
 
-    .logo img {
-        width: 170px;
-    }
+    padding: 5px 2px;
+  }
 
-    .search-bar h1 {
-        font-size: 29px;
-    }
+  /* INICIO */
 
-    .search-bar p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
+  .Inicio {
+    min-height: calc(100vh - 100px);
 
+    padding:
+      70px
+      15px;
 
-    /* ---------- QUIENES SOMOS / MISIÓN ---------- */
+    gap: 35px;
+  }
 
-    .Informacion .container-informacion,
-    .Mision .container-informacion {
-        gap: 25px;
-    }
+  .logo img {
+    width: min(220px, 65vw);
+  }
 
-    .card {
-        padding: 25px 20px;
-    }
+  .search-bar {
+    padding: 25px 18px;
 
-    .card h1 {
-        font-size: 27px;
-    }
+    border-radius: 18px;
+  }
 
-    .card p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
+  .search-bar h1 {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+  }
 
+  .search-bar p {
+    font-size: 0.95rem;
 
-    /* ---------- PLANES ---------- */
+    line-height: 1.7;
+  }
 
-    .Plans h1 {
-        font-size: 30px;
-    }
+  /* QUIENES SOMOS */
 
-    .cards-container {
-        flex-direction: column;
-        align-items: center;
+  .container-informacion {
+    flex-direction: column;
 
-        gap: 25px;
-    }
+    gap: 30px;
 
-    .card-plan {
-        width: 100%;
-        min-width: 0;
-        max-width: 370px;
+    width: 100%;
+  }
 
-        padding: 25px 20px;
-    }
+  .portada-cuadrado {
+    width: 100%;
+  }
 
-    .card-plan h2 {
-        font-size: 23px;
-    }
+  .portada-cuadrado img {
+    width: min(250px, 75vw);
+  }
 
-    .card-plan p {
-        font-size: 15px;
-        line-height: 1.6;
-    }
+  section .card {
+    width: 100%;
 
-    .card-plan button {
-        width: 100%;
-    }
+    padding: 25px 20px;
 
+    text-align: center !important;
 
-    /* ---------- PORTAFOLIO WEB ---------- */
+    border-radius: 18px;
+  }
 
-    .Portafolio h1 {
-        font-size: 27px;
-        line-height: 1.2;
-    }
+  section .card p {
+    font-size: 0.95rem;
+  }
 
-    .informacion-portafolio {
-        padding: 25px 20px;
-    }
+  /* MISIÓN */
 
-    .informacion-portafolio li {
-        font-size: 14px;
-        line-height: 1.5;
-    }
+  #Mision {
+    padding:
+      80px
+      18px;
+  }
 
+  #Mision .portada-cuadrado img {
+    width: 120px;
+    height: 120px;
+  }
 
-    /* ---------- PORTAFOLIO MÓVIL ---------- */
+  #Mision .card.texto-derecha {
+    max-width: 100%;
+  }
 
-    .movil h1 {
-        font-size: 27px;
-        line-height: 1.2;
-    }
+  /* PLANS */
 
-    .movil .informacion-portafolio {
-        padding: 25px 20px;
-    }
+  #Plans {
+    padding:
+      80px
+      15px;
+  }
 
-    .movil .informacion-portafolio p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
+  .cards-container {
+    grid-template-columns: 1fr;
 
-    .movil .informacion-portafolio li {
-        font-size: 14px;
-    }
+    width: min(100%, 400px);
 
+    gap: 25px;
 
-    /* ---------- CONTACTO ---------- */
+    padding: 0;
+  }
 
-    .Contactanos {
-        flex-direction: column;
+  .card-plan {
+    min-height: auto;
 
-        gap: 30px;
-    }
+    padding: 30px 25px;
+  }
 
-    .logo-contacto img {
-        width: 150px;
-    }
+  .card-plan p {
+    line-height: 1.7;
+  }
 
-    .contact-info {
-        width: 100%;
-        max-width: 400px;
-    }
+  /* PORTAFOLIO */
 
-    #contacto-form {
-        width: 100%;
-    }
+  #Portafolio {
+    padding:
+      80px
+      18px;
+  }
 
-    #contacto-form input,
-    #contacto-form textarea {
-        width: 100%;
-    }
+  #Portafolio .container-informacion {
+    display: flex;
 
-    #contacto-form button {
-        width: 100%;
-    }
+    flex-direction: column;
 
+    gap: 30px;
+  }
 
-    /* ---------- REDES SOCIALES ---------- */
+  #Portafolio h1 {
+    font-size: 1.35rem;
 
-    .redes-sociales {
-        width: 100%;
-        max-width: 350px;
-    }
+    text-align: center;
+  }
 
+  #Portafolio li {
+    font-size: 0.9rem;
+
+    padding:
+      15px
+      15px
+      15px
+      30px;
+  }
+
+  /* CONTACTO */
+
+  #Contactanos {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "logo"
+      "form"
+      "social";
+
+    gap: 40px;
+
+    padding:
+      80px
+      18px;
+  }
+
+  .logo-contacto img {
+    width: min(190px, 55vw);
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  .contact-info form {
+    padding: 25px 18px;
+  }
+
+  .redes-sociales {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+  .redes-sociales a {
+    width: 100px;
+
+    font-size: 0.8rem;
+
+    padding: 8px;
+  }
+
+  .redes-sociales img {
+    width: 55px;
+  }
+
+  /* FOOTER */
+
+  footer {
+    padding: 18px 10px;
+  }
 }
 
+/* =========================================================
+   CELULARES MUY PEQUEÑOS
+   ========================================================= */
 
-/* =====================================================
-   CELULARES PEQUEÑOS
-   320px - 400px
-===================================================== */
+@media (max-width: 400px) {
 
-@media screen and (max-width: 400px) {
+  nav ul {
+    gap: 4px 8px;
+  }
 
-    section {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+  nav ul li a {
+    font-size: 0.7rem;
+  }
 
+  .Inicio {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 
-    /* Menú */
+  .search-bar h1 {
+    font-size: 1.6rem;
+  }
 
-    nav ul {
-        gap: 5px 7px;
-        padding: 10px 5px;
-    }
+  .search-bar p {
+    font-size: 0.88rem;
+  }
 
-    nav ul li a {
-        font-size: 10px;
-    }
+  section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
+  .card-plan {
+    padding: 25px 18px;
+  }
 
-    /* Inicio */
+  #Portafolio li {
+    font-size: 0.85rem;
+  }
+}
 
-    .logo img {
-        width: 140px;
-    }
+/* =========================================================
+   PANTALLAS GRANDES / TV
+   ========================================================= */
 
-    .search-bar h1 {
-        font-size: 24px;
-    }
+@media (min-width: 1600px) {
 
-    .search-bar p {
-        font-size: 14px;
-    }
+  body {
+    font-size: 18px;
+  }
 
+  nav {
+    min-height: 85px;
+  }
 
-    /* Cards */
+  nav ul {
+    gap: 15px 40px;
+  }
 
-    .card-plan {
-        padding: 22px 17px;
-    }
+  .Inicio {
+    max-width: 1600px;
+    margin: auto;
 
-    .card-plan h2 {
-        font-size: 21px;
-    }
+    gap: 120px;
+  }
 
-    .card-plan p {
-        font-size: 14px;
-    }
+  .container-informacion {
+    max-width: 1400px;
+  }
 
+  .search-bar {
+    max-width: 850px;
+  }
 
-    /* Portafolio */
+  .search-bar h1 {
+    font-size: 4.5rem;
+  }
 
-    .Portafolio h1,
-    .movil h1 {
-        font-size: 24px;
-    }
+  .search-bar p {
+    font-size: 1.35rem;
+  }
 
-    .informacion-portafolio {
-        padding: 20px 15px;
-    }
+  #Plans .container-informacion {
+    max-width: 1300px;
+  }
 
-    .informacion-portafolio li {
-        font-size: 13px;
-    }
+  .cards-container {
+    grid-template-columns:
+      repeat(2, 380px);
 
+    gap: 60px;
+  }
 
-    /* Contacto */
+  .card-plan {
+    min-height: 480px;
+  }
 
-    #contacto-form {
-        padding: 20px 15px;
-    }
+  #Portafolio .container-informacion {
+    max-width: 1400px;
+  }
 
+  #Contactanos {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+/* =========================================================
+   PANTALLAS MUY GRANDES
+   ========================================================= */
+
+@media (min-width: 2200px) {
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  .Inicio {
+    max-width: 1800px;
+  }
+
+  .logo img {
+    width: 430px;
+  }
+
+  .search-bar h1 {
+    font-size: 5rem;
+  }
+
+  .search-bar p {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+/* =========================================================
+   REDUCIR ANIMACIONES SI EL USUARIO LO SOLICITA
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
