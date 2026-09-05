@@ -28,52 +28,45 @@ body {
 nav {
   width: 100%;
   min-height: 70px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 15px 30px;
+  padding: 12px 30px;
 
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  background: rgba(0, 0, 0, 0.60);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
   border-bottom: 1px solid rgba(0, 195, 255, 0.25);
 
-  box-shadow:
-    0 4px 25px rgba(0, 195, 255, 0.15);
+  box-shadow: 0 4px 25px rgba(0, 195, 255, 0.15);
 }
 
 nav ul {
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex-wrap: wrap;
-  gap: 10px 28px;
-
+  gap: 8px 28px;
   list-style: none;
 }
 
 nav ul li a {
   display: inline-block;
+  position: relative;
+
+  padding: 7px 4px;
 
   color: #00c3ff;
   text-decoration: none;
 
   font-size: clamp(0.8rem, 1vw, 1rem);
   font-weight: 600;
-
-  padding: 7px 4px;
-
-  position: relative;
 
   text-shadow:
     0 0 5px #00c3ff,
@@ -85,22 +78,20 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #ffffff;
+  color: #fff;
   transform: translateY(-2px);
 }
 
 nav ul li a::after {
   content: "";
-
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: 0;
 
   width: 0;
   height: 2px;
 
   background: #00fff0;
-
   box-shadow: 0 0 8px #00fff0;
 
   transition: width 0.3s ease;
@@ -126,14 +117,14 @@ nav ul li a:hover::after {
    ========================================================= */
 
 section {
+  position: relative;
+
   width: 100%;
   min-height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  position: relative;
 
   padding:
     clamp(70px, 8vw, 120px)
@@ -144,25 +135,23 @@ section {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
 
   overflow: hidden;
 }
 
-/* Oscurecer ligeramente las imágenes de fondo */
+/* Capa oscura sobre las imágenes */
 
 section::before {
   content: "";
-
   position: absolute;
   inset: 0;
 
   background:
     linear-gradient(
       135deg,
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 30, 0.20),
-      rgba(0, 0, 0, 0.40)
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 30, 0.22),
+      rgba(0, 0, 0, 0.45)
     );
 
   z-index: 0;
@@ -197,19 +186,23 @@ section > * {
   background-image: url("assets/Portada6.png");
 }
 
-/* Fondo para aplicaciones móviles */
-
 #movil {
   background-image:
     linear-gradient(
-      rgba(5, 0, 25, 0.45),
-      rgba(0, 0, 20, 0.55)
+      135deg,
+      rgba(10, 0, 35, 0.65),
+      rgba(0, 0, 20, 0.5)
     ),
     url("assets/Portada6.png");
 }
 
 #Contactanos {
-  background-image: url("assets/Portada11.png");
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 15, 0.25),
+      rgba(0, 0, 15, 0.45)
+    ),
+    url("assets/fondo-tecnologico.jpg");
 }
 
 /* =========================================================
@@ -220,6 +213,7 @@ section > * {
   min-height: calc(100vh - 70px);
 
   display: grid;
+
   grid-template-columns:
     minmax(250px, 1fr)
     minmax(300px, 1.5fr);
@@ -256,13 +250,13 @@ section > * {
 .search-bar {
   width: min(700px, 100%);
 
-  text-align: center;
-
   padding: clamp(25px, 4vw, 55px);
+
+  text-align: center;
 
   border-radius: 25px;
 
-  background: rgba(0, 0, 0, 0.42);
+  background: rgba(0, 0, 0, 0.45);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -275,18 +269,19 @@ section > * {
 }
 
 .search-bar h1 {
+  margin-bottom: 25px;
+
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.15;
 
-  margin-bottom: 25px;
-
-  background: linear-gradient(
-    90deg,
-    #00fff0,
-    #00c3ff,
-    #ffffff,
-    #00fff0
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #00fff0,
+      #00c3ff,
+      #fff,
+      #00fff0
+    );
 
   background-size: 300% auto;
   background-clip: text;
@@ -298,21 +293,20 @@ section > * {
 }
 
 .search-bar p {
+  color: #d9f7ff;
+
   font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.8;
-  color: #d9f7ff;
 }
 
 @keyframes gradientText {
-
-  0% {
+  from {
     background-position: 0% center;
   }
 
-  100% {
+  to {
     background-position: 300% center;
   }
-
 }
 
 /* =========================================================
@@ -326,9 +320,9 @@ section > * {
   justify-content: center;
   align-items: center;
 
-  gap: clamp(30px, 6vw, 80px);
-
   flex-wrap: wrap;
+
+  gap: clamp(30px, 6vw, 80px);
 
   margin: auto;
 }
@@ -338,11 +332,11 @@ section > * {
    ========================================================= */
 
 .portada-cuadrado {
+  flex: 0 1 350px;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  flex: 0 1 350px;
 }
 
 .portada-cuadrado img {
@@ -371,7 +365,7 @@ section > * {
 }
 
 /* =========================================================
-   TARJETAS DE INFORMACIÓN
+   TARJETAS GENERALES
    ========================================================= */
 
 section .card {
@@ -409,11 +403,12 @@ section .card:hover {
 
 section .card p {
   color: #e2f8ff;
+
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
 /* =========================================================
-   TÍTULOS
+   TÍTULOS GENERALES
    ========================================================= */
 
 section h1,
@@ -421,7 +416,6 @@ section h2 {
   margin-bottom: 20px;
 
   font-size: clamp(1.7rem, 3vw, 3rem);
-
   line-height: 1.2;
 
   letter-spacing: clamp(1px, 0.3vw, 3px);
@@ -440,10 +434,6 @@ section h2 {
   -webkit-background-clip: text;
 
   -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 0 20px #00fff0,
-    0 0 40px #00c3ff;
 }
 
 /* =========================================================
@@ -503,17 +493,20 @@ section h2 {
 }
 
 #Plans .container-informacion {
-  flex-direction: column;
   width: min(1100px, 100%);
+  flex-direction: column;
 }
 
 #Plans h1 {
   margin-bottom: clamp(30px, 5vw, 60px);
 
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 
-  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
+
+/* Contenedor de planes */
 
 .cards-container {
   width: 100%;
@@ -528,9 +521,10 @@ section h2 {
   gap: clamp(20px, 4vw, 45px);
 }
 
+/* Tarjeta */
+
 .card-plan {
   width: 100%;
-
   min-height: 430px;
 
   display: flex;
@@ -572,21 +566,22 @@ section h2 {
 }
 
 .card-plan p {
+  margin-bottom: 25px;
+
   color: #d8e8ef;
 
   font-size: clamp(0.9rem, 1.1vw, 1rem);
-
   line-height: 1.8;
-
-  margin-bottom: 25px;
 }
+
+/* Botón de planes */
 
 .card-plan button {
   width: 100%;
 
   padding: 13px 25px;
 
-  border: none;
+  border: 0;
   border-radius: 30px;
 
   background:
@@ -596,7 +591,7 @@ section h2 {
       #3333ff
     );
 
-  color: white;
+  color: #fff;
 
   font-weight: 700;
   font-size: 1rem;
@@ -630,8 +625,6 @@ section h2 {
    ========================================================= */
 
 #Portafolio {
-  min-height: 100vh;
-
   padding:
     clamp(80px, 10vw, 140px)
     clamp(20px, 6vw, 90px);
@@ -656,70 +649,59 @@ section h2 {
 #Portafolio h1 {
   display: inline-block;
 
-  padding: 12px 22px;
   margin: 0;
+  padding: 12px 22px;
 
   background: #23156b;
 
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 
   border-radius: 8px;
 
   font-size: clamp(1.3rem, 2.5vw, 2rem);
   font-weight: 700;
+
   letter-spacing: 1px;
 
   text-shadow:
-    0 0 5px #ffffff,
+    0 0 5px #fff,
     0 0 12px #00c3ff;
 
   box-shadow:
     0 0 15px rgba(35, 21, 107, 0.8),
     0 0 30px rgba(0, 195, 255, 0.2);
-
-  position: relative;
-  z-index: 10;
-
-  visibility: visible;
-  opacity: 1;
 }
 
 #Portafolio .informacion-portafolio {
   width: 100%;
-
   max-width: 650px;
-
-  margin: 0;
 }
 
 #Portafolio ul {
-  list-style: none;
-
   padding: 0;
   margin: 0;
+
+  list-style: none;
 }
 
 #Portafolio li {
   position: relative;
 
+  margin-bottom: 12px;
   padding: 18px 20px 18px 35px;
 
-  margin-bottom: 12px;
-
+  border-left: 3px solid #ffcc33;
   border-radius: 12px;
 
   background: rgba(0, 0, 0, 0.45);
 
   backdrop-filter: blur(8px);
 
-  color: #ffffff;
+  color: #fff;
 
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-
   line-height: 1.6;
-
-  border-left: 3px solid #ffcc33;
 
   box-shadow:
     0 0 15px rgba(0, 0, 0, 0.2);
@@ -739,7 +721,6 @@ section h2 {
   content: "◆";
 
   position: absolute;
-
   left: 12px;
   top: 18px;
 
@@ -749,8 +730,7 @@ section h2 {
 }
 
 /* =========================================================
-   DESARROLLO DE APLICACIONES MÓVILES
-   REACT NATIVE
+   APLICACIONES MÓVILES
    ========================================================= */
 
 #movil {
@@ -770,32 +750,19 @@ section h2 {
     center / cover no-repeat;
 }
 
-/* Contenedor */
-
 #movil .container-informacion {
   width: min(1100px, 100%);
 
-  display: flex;
-
   flex-direction: column;
 
-  justify-content: center;
-
-  align-items: center;
-
   gap: 30px;
-
-  margin: auto;
 }
-
-/* Título */
 
 #movil h1 {
   display: inline-block;
 
-  padding: 12px 25px;
-
   margin-bottom: 20px;
+  padding: 12px 25px;
 
   background:
     linear-gradient(
@@ -805,24 +772,20 @@ section h2 {
       #23156b
     );
 
-  color: #ffffff;
-
-  -webkit-text-fill-color: #ffffff;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 
   border: 1px solid rgba(255, 0, 255, 0.55);
-
   border-radius: 10px;
 
   font-size: clamp(1.4rem, 3vw, 2.3rem);
-
   line-height: 1.3;
 
   letter-spacing: 2px;
-
   text-align: center;
 
   text-shadow:
-    0 0 5px #ffffff,
+    0 0 5px #fff,
     0 0 12px #ff00ff,
     0 0 25px #00c3ff;
 
@@ -831,24 +794,18 @@ section h2 {
     0 0 35px rgba(0, 195, 255, 0.15);
 }
 
-/* Tarjeta de información */
-
 #movil .informacion-portafolio {
-
   width: 100%;
-
   max-width: 850px;
 
-  padding:
-    clamp(25px, 4vw, 45px);
+  padding: clamp(25px, 4vw, 45px);
 
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.5);
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
   border: 1px solid rgba(255, 0, 255, 0.28);
-
   border-radius: 25px;
 
   box-shadow:
@@ -862,7 +819,6 @@ section h2 {
 }
 
 #movil .informacion-portafolio:hover {
-
   transform: translateY(-5px);
 
   box-shadow:
@@ -871,26 +827,18 @@ section h2 {
     inset 0 0 30px rgba(255, 0, 255, 0.05);
 }
 
-/* Texto */
-
 #movil .informacion-portafolio p {
-
   margin-bottom: 30px;
 
   color: #e2f8ff;
 
-  font-size:
-    clamp(0.95rem, 1.3vw, 1.15rem);
-
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
   line-height: 1.9;
 
   text-align: center;
 }
 
-/* React Native */
-
 #movil .informacion-portafolio strong {
-
   color: #ff4dff;
 
   text-shadow:
@@ -898,20 +846,17 @@ section h2 {
     0 0 12px rgba(255, 0, 255, 0.7);
 }
 
-/* Lista */
-
 #movil .informacion-portafolio ul {
+  padding: 0;
+  margin: 0;
 
   list-style: none;
-
-  padding: 0;
-
-  margin: 0;
 }
 
 #movil .informacion-portafolio li {
-
   position: relative;
+
+  margin-bottom: 12px;
 
   padding:
     15px
@@ -919,21 +864,15 @@ section h2 {
     15px
     45px;
 
-  margin-bottom: 12px;
+  color: #fff;
 
-  color: #ffffff;
-
-  font-size:
-    clamp(0.9rem, 1.15vw, 1.05rem);
-
+  font-size: clamp(0.9rem, 1.15vw, 1.05rem);
   line-height: 1.6;
 
-  background:
-    rgba(20, 10, 40, 0.55);
-
-  border-radius: 12px;
+  background: rgba(20, 10, 40, 0.55);
 
   border-left: 3px solid #ff00ff;
+  border-radius: 12px;
 
   box-shadow:
     0 0 12px rgba(255, 0, 255, 0.08);
@@ -944,16 +883,12 @@ section h2 {
     border-color 0.3s ease;
 }
 
-/* Icono */
-
 #movil .informacion-portafolio li::before {
-
   content: "◆";
 
   position: absolute;
 
   left: 17px;
-
   top: 15px;
 
   color: #00fff0;
@@ -965,14 +900,10 @@ section h2 {
     0 0 15px #00c3ff;
 }
 
-/* Hover */
-
 #movil .informacion-portafolio li:hover {
-
   transform: translateX(7px);
 
-  background:
-    rgba(50, 10, 70, 0.65);
+  background: rgba(50, 10, 70, 0.65);
 
   border-left-color: #00fff0;
 
@@ -987,10 +918,6 @@ section h2 {
 #Contactanos {
   min-height: 100vh;
 
-  padding:
-    clamp(70px, 8vw, 110px)
-    clamp(20px, 5vw, 70px);
-
   display: grid;
 
   grid-template-columns:
@@ -1003,13 +930,9 @@ section h2 {
 
   gap: clamp(30px, 5vw, 80px);
 
-  background:
-    linear-gradient(
-      rgba(0, 0, 15, 0.2),
-      rgba(0, 0, 15, 0.4)
-    ),
-    url("assets/fondo-tecnologico.jpg")
-    center / cover no-repeat;
+  padding:
+    clamp(70px, 8vw, 110px)
+    clamp(20px, 5vw, 70px);
 }
 
 /* Logo */
@@ -1024,11 +947,11 @@ section h2 {
   width: clamp(150px, 18vw, 260px);
   max-width: 100%;
 
+  padding: 10px;
+
   border-radius: 50%;
 
   background: rgba(255, 255, 255, 0.05);
-
-  padding: 10px;
 
   filter:
     drop-shadow(0 0 15px #00ffff)
@@ -1053,12 +976,11 @@ section h2 {
 .contact-info form {
   width: 100%;
 
-  padding:
-    clamp(25px, 4vw, 40px);
+  padding: clamp(25px, 4vw, 40px);
 
   border-radius: 20px;
 
-  background: rgba(0, 0, 20, 0.70);
+  background: rgba(0, 0, 20, 0.7);
 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1072,34 +994,28 @@ section h2 {
 }
 
 .contact-info h2 {
-  font-size:
-    clamp(1.5rem, 2.5vw, 2rem);
-
   margin-bottom: 25px;
+
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .contact-info input,
 .contact-info textarea {
-
   display: block;
 
   width: 100%;
 
   margin: 12px 0;
-
   padding: 13px 15px;
 
-  border:
-    1px solid rgba(0, 255, 255, 0.2);
-
+  border: 1px solid rgba(0, 255, 255, 0.2);
   border-radius: 10px;
 
   outline: none;
 
-  background:
-    rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 
-  color: #ffffff;
+  color: #fff;
 
   font-size: 1rem;
 
@@ -1111,39 +1027,31 @@ section h2 {
 
 .contact-info input::placeholder,
 .contact-info textarea::placeholder {
-  color:
-    rgba(220, 250, 255, 0.65);
+  color: rgba(220, 250, 255, 0.65);
 }
 
 .contact-info input:focus,
 .contact-info textarea:focus {
-
   border-color: #00ffff;
 
-  background:
-    rgba(0, 255, 255, 0.06);
+  background: rgba(0, 255, 255, 0.06);
 
   box-shadow:
     0 0 15px rgba(0, 255, 255, 0.25);
 }
 
 .contact-info textarea {
-
   min-height: 140px;
-
   resize: vertical;
 }
 
 .contact-info button {
-
   width: 100%;
 
   margin-top: 10px;
-
   padding: 13px 25px;
 
-  border: none;
-
+  border: 0;
   border-radius: 30px;
 
   background:
@@ -1153,10 +1061,9 @@ section h2 {
       #0066ff
     );
 
-  color: white;
+  color: #fff;
 
   font-size: 1rem;
-
   font-weight: 700;
 
   cursor: pointer;
@@ -1170,7 +1077,6 @@ section h2 {
 }
 
 .contact-info button:hover {
-
   transform: translateY(-2px);
 
   box-shadow:
@@ -1182,46 +1088,39 @@ section h2 {
    ========================================================= */
 
 .redes-sociales {
-
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 20px;
 }
 
 .redes-sociales a {
-
   width: min(180px, 100%);
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 8px;
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  text-align: center;
 
   padding: 12px;
 
   border-radius: 15px;
 
-  background:
-    rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.35);
+
+  color: #fff;
+
+  text-decoration: none;
+  text-align: center;
+
+  font-weight: 600;
 
   transition:
     transform 0.3s ease,
@@ -1229,7 +1128,6 @@ section h2 {
 }
 
 .redes-sociales a:hover {
-
   transform: translateY(-5px);
 
   background:
@@ -1237,10 +1135,7 @@ section h2 {
 }
 
 .redes-sociales img {
-
-  width:
-    clamp(50px, 6vw, 80px);
-
+  width: clamp(50px, 6vw, 80px);
   height: auto;
 
   transition:
@@ -1248,8 +1143,7 @@ section h2 {
     filter 0.3s ease;
 }
 
-.redes-sociales img:hover {
-
+.redes-sociales a:hover img {
   transform: scale(1.1);
 
   filter:
@@ -1258,29 +1152,100 @@ section h2 {
 }
 
 /* =========================================================
+   BOTONES GITHUB / LINKEDIN
+   ========================================================= */
+
+.github-btn,
+.linkedin-btn {
+  width: min(220px, 100%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 13px 25px;
+
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c3ff,
+      #0066ff,
+      #8a2be2
+    );
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 15px rgba(0, 195, 255, 0.35),
+    0 0 30px rgba(138, 43, 226, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.github-btn img,
+.linkedin-btn img {
+  width: 28px;
+  height: 28px;
+
+  object-fit: contain;
+}
+
+.github-btn:hover,
+.linkedin-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  background:
+    linear-gradient(
+      90deg,
+      #00fff0,
+      #00c3ff,
+      #8a2be2
+    );
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.55),
+    0 0 40px rgba(138, 43, 226, 0.35);
+}
+
+.github-btn:active,
+.linkedin-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
    FOOTER
    ========================================================= */
 
 footer {
-
   width: 100%;
 
   padding: 20px;
 
-  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
 
-  background:
-    rgba(0, 0, 0, 0.75);
-
-  border-top:
-    1px solid rgba(0, 195, 255, 0.15);
+  border-top: 1px solid rgba(0, 195, 255, 0.15);
 
   color: #00c3ff;
 
-  font-size:
-    clamp(0.8rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 1rem);
 
   font-weight: 600;
+
+  text-align: center;
 }
 
 /* =========================================================
@@ -1298,47 +1263,39 @@ footer {
   }
 
   .Inicio {
-
     grid-template-columns: 1fr;
-
-    text-align: center;
 
     min-height: auto;
 
     padding-top: 100px;
     padding-bottom: 100px;
+
+    text-align: center;
   }
 
   .logo img {
-
-    width:
-      clamp(180px, 35vw, 280px);
+    width: clamp(180px, 35vw, 280px);
   }
 
   .search-bar {
-
     max-width: 750px;
   }
 
   #Portafolio .container-informacion {
-
     grid-template-columns: 1fr;
 
     text-align: center;
   }
 
   #Portafolio h1 {
-
     margin: auto;
   }
 
   #Portafolio .informacion-portafolio {
-
     margin: auto;
   }
 
   #Contactanos {
-
     grid-template-columns: 1fr 1fr;
 
     grid-template-areas:
@@ -1355,16 +1312,12 @@ footer {
   }
 
   .redes-sociales {
-
     grid-area: social;
 
     flex-direction: row;
-
     flex-wrap: wrap;
   }
-
 }
-
 
 /* =========================================================
    TABLETS
@@ -1373,45 +1326,30 @@ footer {
 @media (max-width: 768px) {
 
   nav ul {
-
-    gap:
-      8px 14px;
+    gap: 8px 14px;
   }
 
   nav ul li a {
-
-    font-size:
-      0.78rem;
+    font-size: 0.78rem;
   }
 
   #movil {
-
     padding:
       90px
       25px;
   }
 
   #movil .informacion-portafolio {
-
-    padding:
-      30px 25px;
-
+    padding: 30px 25px;
     border-radius: 20px;
   }
 
   #movil .informacion-portafolio p {
-
     text-align: left;
-
-    font-size:
-      1rem;
-
-    line-height:
-      1.8;
+    font-size: 1rem;
+    line-height: 1.8;
   }
-
 }
-
 
 /* =========================================================
    CELULARES
@@ -1420,18 +1358,14 @@ footer {
 @media (max-width: 700px) {
 
   html {
-
     scroll-padding-top: 120px;
   }
 
   body {
-
-    background-attachment:
-      scroll;
+    background-attachment: scroll;
   }
 
   section {
-
     min-height: auto;
 
     padding:
@@ -1439,252 +1373,165 @@ footer {
       18px;
   }
 
-  /* -------------------------
-     NAV
-  ------------------------- */
+  /* NAV */
 
   nav {
+    position: sticky;
 
-    position:
-      sticky;
+    min-height: auto;
 
-    padding:
-      12px 10px;
-
-    min-height:
-      auto;
+    padding: 12px 10px;
   }
 
   nav ul {
-
-    gap:
-      5px 12px;
+    gap: 5px 12px;
   }
 
   nav ul li a {
-
-    font-size:
-      0.78rem;
-
-    padding:
-      5px 2px;
+    padding: 5px 2px;
+    font-size: 0.78rem;
   }
 
-  /* -------------------------
-     INICIO
-  ------------------------- */
+  /* INICIO */
 
   .Inicio {
-
-    min-height:
-      calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
 
     padding:
       70px
       15px;
 
-    gap:
-      35px;
+    gap: 35px;
   }
 
   .logo img {
-
-    width:
-      min(220px, 65vw);
+    width: min(220px, 65vw);
   }
 
   .search-bar {
-
-    padding:
-      25px 18px;
-
-    border-radius:
-      18px;
+    padding: 25px 18px;
+    border-radius: 18px;
   }
 
   .search-bar h1 {
-
-    font-size:
-      clamp(1.7rem, 8vw, 2.5rem);
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
   }
 
   .search-bar p {
-
-    font-size:
-      0.95rem;
-
-    line-height:
-      1.7;
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
-  /* -------------------------
-     QUIENES SOMOS
-  ------------------------- */
+  /* CONTENEDORES */
 
   .container-informacion {
+    flex-direction: column;
+    gap: 30px;
 
-    flex-direction:
-      column;
-
-    gap:
-      30px;
-
-    width:
-      100%;
+    width: 100%;
   }
 
   .portada-cuadrado {
-
-    width:
-      100%;
+    width: 100%;
   }
 
   .portada-cuadrado img {
-
-    width:
-      min(250px, 75vw);
+    width: min(250px, 75vw);
   }
 
+  /* TARJETAS */
+
   section .card {
+    width: 100%;
 
-    width:
-      100%;
+    padding: 25px 20px;
 
-    padding:
-      25px 20px;
+    border-radius: 18px;
 
-    text-align:
-      center !important;
-
-    border-radius:
-      18px;
+    text-align: center !important;
   }
 
   section .card p {
-
-    font-size:
-      0.95rem;
+    font-size: 0.95rem;
   }
 
-  /* -------------------------
-     MISIÓN
-  ------------------------- */
+  /* MISIÓN */
 
   #Mision {
-
     padding:
       80px
       18px;
   }
 
   #Mision .portada-cuadrado img {
-
-    width:
-      120px;
-
-    height:
-      120px;
+    width: 120px;
+    height: 120px;
   }
 
   #Mision .card.texto-derecha {
-
-    max-width:
-      100%;
+    max-width: 100%;
   }
 
-  /* -------------------------
-     PLANS
-  ------------------------- */
+  /* PLANES */
 
   #Plans {
-
     padding:
       80px
       15px;
   }
 
   .cards-container {
+    width: min(100%, 400px);
 
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    width:
-      min(100%, 400px);
-
-    gap:
-      25px;
-
-    padding:
-      0;
+    gap: 25px;
   }
 
   .card-plan {
+    min-height: auto;
 
-    min-height:
-      auto;
-
-    padding:
-      30px 25px;
+    padding: 30px 25px;
   }
 
   .card-plan p {
-
-    line-height:
-      1.7;
+    line-height: 1.7;
   }
 
-  /* -------------------------
-     PORTAFOLIO WEB
-  ------------------------- */
+  /* PORTAFOLIO */
 
   #Portafolio {
-
     padding:
       80px
       18px;
   }
 
   #Portafolio .container-informacion {
+    display: flex;
+    flex-direction: column;
 
-    display:
-      flex;
-
-    flex-direction:
-      column;
-
-    gap:
-      30px;
+    gap: 30px;
   }
 
   #Portafolio h1 {
-
-    font-size:
-      1.35rem;
-
-    text-align:
-      center;
+    font-size: 1.35rem;
+    text-align: center;
   }
 
   #Portafolio li {
-
-    font-size:
-      0.9rem;
-
     padding:
       15px
       15px
       15px
       30px;
+
+    font-size: 0.9rem;
   }
 
-  /* -------------------------
-     APLICACIONES MÓVILES
-  ------------------------- */
+  /* APLICACIONES MÓVILES */
 
   #movil {
-
-    min-height:
-      auto;
+    min-height: auto;
 
     padding:
       80px
@@ -1692,97 +1539,66 @@ footer {
   }
 
   #movil .container-informacion {
-
-    gap:
-      20px;
+    gap: 20px;
   }
 
   #movil h1 {
+    width: 100%;
 
-    width:
-      100%;
+    padding: 12px 15px;
 
-    padding:
-      12px 15px;
+    font-size: 1.35rem;
 
-    font-size:
-      1.35rem;
-
-    letter-spacing:
-      1px;
-
-    line-height:
-      1.3;
+    letter-spacing: 1px;
+    line-height: 1.3;
   }
 
   #movil .informacion-portafolio {
-
     padding:
       25px
       18px;
 
-    border-radius:
-      18px;
+    border-radius: 18px;
   }
 
   #movil .informacion-portafolio p {
+    margin-bottom: 25px;
 
-    font-size:
-      0.92rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
 
-    line-height:
-      1.75;
-
-    text-align:
-      left;
-
-    margin-bottom:
-      25px;
+    text-align: left;
   }
 
   #movil .informacion-portafolio li {
-
     padding:
       13px
       12px
       13px
       35px;
 
-    font-size:
-      0.88rem;
-
-    line-height:
-      1.5;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   #movil .informacion-portafolio li::before {
-
-    left:
-      12px;
-
-    top:
-      13px;
+    left: 12px;
+    top: 13px;
   }
 
-  /* -------------------------
-     CONTACTO
-  ------------------------- */
+  /* CONTACTO */
 
   #Contactanos {
+    min-height: auto;
 
-    min-height:
-      auto;
-
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     grid-template-areas:
       "logo"
       "form"
       "social";
 
-    gap:
-      40px;
+    gap: 40px;
 
     padding:
       80px
@@ -1790,173 +1606,160 @@ footer {
   }
 
   .logo-contacto img {
-
-    width:
-      min(190px, 55vw);
+    width: min(190px, 55vw);
   }
 
   .contact-info {
-
-    width:
-      100%;
+    width: 100%;
   }
 
   .contact-info form {
-
     padding:
-      25px 18px;
+      25px
+      18px;
   }
 
   .redes-sociales {
+    flex-direction: row;
+    flex-wrap: wrap;
 
-    flex-direction:
-      row;
-
-    flex-wrap:
-      wrap;
-
-    gap:
-      12px;
+    gap: 12px;
   }
 
   .redes-sociales a {
+    width: 100px;
 
-    width:
-      100px;
+    padding: 8px;
 
-    font-size:
-      0.8rem;
-
-    padding:
-      8px;
+    font-size: 0.8rem;
   }
 
   .redes-sociales img {
-
-    width:
-      55px;
+    width: 55px;
   }
 
-  /* -------------------------
-     FOOTER
-  ------------------------- */
+  /* BOTONES GITHUB / LINKEDIN */
+
+  .github-btn,
+  .linkedin-btn {
+    width: min(200px, 90%);
+
+    padding: 12px 20px;
+
+    font-size: 0.9rem;
+  }
+
+  .github-btn img,
+  .linkedin-btn img {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* FOOTER */
 
   footer {
-
     padding:
-      18px 10px;
+      18px
+      10px;
   }
-
 }
-
 
 /* =========================================================
    CELULARES PEQUEÑOS
-   320px - 400px
    ========================================================= */
 
 @media (max-width: 400px) {
 
   nav ul {
-
-    gap:
-      4px 8px;
+    gap: 4px 8px;
   }
 
   nav ul li a {
-
-    font-size:
-      0.7rem;
+    font-size: 0.7rem;
   }
 
   .Inicio {
-
-    padding-top:
-      50px;
-
-    padding-bottom:
-      60px;
+    padding-top: 50px;
+    padding-bottom: 60px;
   }
 
   .search-bar h1 {
-
-    font-size:
-      1.6rem;
+    font-size: 1.6rem;
   }
 
   .search-bar p {
-
-    font-size:
-      0.88rem;
+    font-size: 0.88rem;
   }
 
   section {
-
-    padding-left:
-      14px;
-
-    padding-right:
-      14px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   .card-plan {
-
     padding:
-      25px 18px;
+      25px
+      18px;
   }
 
   .card-plan h2 {
-
-    font-size:
-      1.3rem;
+    font-size: 1.3rem;
   }
 
   #Portafolio li {
-
-    font-size:
-      0.85rem;
+    font-size: 0.85rem;
   }
 
-  /* Aplicaciones móviles */
+  /* MÓVIL */
 
   #movil {
-
     padding:
-      75px 14px;
+      75px
+      14px;
   }
 
   #movil h1 {
-
-    font-size:
-      1.15rem;
-
     padding:
-      10px 12px;
+      10px
+      12px;
+
+    font-size: 1.15rem;
   }
 
   #movil .informacion-portafolio {
-
     padding:
-      20px 15px;
+      20px
+      15px;
   }
 
   #movil .informacion-portafolio p {
-
-    font-size:
-      0.85rem;
+    font-size: 0.85rem;
   }
 
   #movil .informacion-portafolio li {
-
-    font-size:
-      0.82rem;
-
-    padding-left:
-      32px;
+    padding-left: 32px;
+    font-size: 0.82rem;
   }
 
-}
+  /* BOTONES */
 
+  .github-btn,
+  .linkedin-btn {
+    width: 180px;
+
+    padding:
+      11px
+      18px;
+
+    font-size: 0.85rem;
+  }
+
+  .github-btn img,
+  .linkedin-btn img {
+    width: 22px;
+    height: 22px;
+  }
+}
 
 /* =========================================================
    PANTALLAS GRANDES
@@ -1965,109 +1768,73 @@ footer {
 @media (min-width: 1600px) {
 
   body {
-
-    font-size:
-      18px;
+    font-size: 18px;
   }
 
   nav {
-
-    min-height:
-      85px;
+    min-height: 85px;
   }
 
   nav ul {
-
-    gap:
-      15px 40px;
+    gap: 15px 40px;
   }
 
   .Inicio {
+    max-width: 1600px;
 
-    max-width:
-      1600px;
+    margin: auto;
 
-    margin:
-      auto;
-
-    gap:
-      120px;
+    gap: 120px;
   }
 
   .container-informacion {
-
-    max-width:
-      1400px;
+    max-width: 1400px;
   }
 
   .search-bar {
-
-    max-width:
-      850px;
+    max-width: 850px;
   }
 
   .search-bar h1 {
-
-    font-size:
-      4.5rem;
+    font-size: 4.5rem;
   }
 
   .search-bar p {
-
-    font-size:
-      1.35rem;
+    font-size: 1.35rem;
   }
 
   #Plans .container-informacion {
-
-    max-width:
-      1300px;
+    max-width: 1300px;
   }
 
   .cards-container {
-
     grid-template-columns:
       repeat(2, 380px);
 
-    gap:
-      60px;
+    gap: 60px;
   }
 
   .card-plan {
-
-    min-height:
-      480px;
+    min-height: 480px;
   }
 
   #Portafolio .container-informacion {
-
-    max-width:
-      1400px;
+    max-width: 1400px;
   }
 
   #movil .container-informacion {
-
-    max-width:
-      1400px;
+    max-width: 1400px;
   }
 
   #movil .informacion-portafolio {
-
-    max-width:
-      950px;
+    max-width: 950px;
   }
 
   #Contactanos {
-
-    padding-left:
-      8%;
-
-    padding-right:
-      8%;
+    padding-left: 8%;
+    padding-right: 8%;
   }
-
 }
-
 
 /* =========================================================
    PANTALLAS MUY GRANDES
@@ -2076,50 +1843,33 @@ footer {
 @media (min-width: 2200px) {
 
   nav ul li a {
-
-    font-size:
-      1.2rem;
+    font-size: 1.2rem;
   }
 
   .Inicio {
-
-    max-width:
-      1800px;
+    max-width: 1800px;
   }
 
   .logo img {
-
-    width:
-      430px;
+    width: 430px;
   }
 
   .search-bar h1 {
-
-    font-size:
-      5rem;
+    font-size: 5rem;
   }
 
   .search-bar p {
-
-    font-size:
-      1.5rem;
+    font-size: 1.5rem;
   }
 
   section {
-
-    padding-left:
-      8%;
-
-    padding-right:
-      8%;
+    padding-left: 8%;
+    padding-right: 8%;
   }
-
 }
 
-
 /* =========================================================
-   REDUCIR ANIMACIONES
-   PARA USUARIOS QUE LO SOLICITEN
+   ACCESIBILIDAD
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2127,139 +1877,11 @@ footer {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
 
-    animation-duration:
-      0.01ms !important;
+    transition-duration: 0.01ms !important;
 
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
-
-    scroll-behavior:
-      auto !important;
-  }
-
-}
-/* =========================================================
-   BOTÓN GITHUB
-   ========================================================= */
-
-.github-btn {
-  width: min(220px, 100%);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 12px;
-
-  padding: 13px 25px;
-
-  border-radius: 30px;
-
-  background: linear-gradient(
-    90deg,
-    #00c3ff,
-    #0066ff,
-    #8a2be2
-  );
-
-  border: 1px solid rgba(0, 255, 255, 0.5);
-
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 1rem;
-  font-weight: 700;
-
-  box-shadow:
-    0 0 15px rgba(0, 195, 255, 0.35),
-    0 0 30px rgba(138, 43, 226, 0.15);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
-
-.github-btn img {
-  width: 28px;
-  height: 28px;
-
-  object-fit: contain;
-
-  filter:
-    brightness(0)
-    invert(1);
-
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
-}
-
-.github-btn:hover {
-  transform: translateY(-4px) scale(1.03);
-
-  background: linear-gradient(
-    90deg,
-    #00fff0,
-    #00c3ff,
-    #8a2be2
-  );
-
-  box-shadow:
-    0 0 20px rgba(0, 255, 255, 0.55),
-    0 0 40px rgba(138, 43, 226, 0.35);
-}
-
-.github-btn:hover img {
-  transform: rotate(8deg) scale(1.15);
-
-  filter:
-    brightness(0)
-    invert(1)
-    drop-shadow(0 0 8px #ffffff);
-}
-
-.github-btn:active {
-  transform: scale(0.97);
-}
-
-/* CELULARES */
-
-@media (max-width: 700px) {
-
-  .github-btn {
-    width: min(200px, 90%);
-
-    padding: 12px 20px;
-
-    font-size: 0.9rem;
-  }
-
-  .github-btn img {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-/* CELULARES PEQUEÑOS */
-
-@media (max-width: 400px) {
-
-  .github-btn {
-    width: 180px;
-
-    padding: 11px 18px;
-
-    font-size: 0.85rem;
-  }
-
-  .github-btn img {
-    width: 22px;
-    height: 22px;
+    scroll-behavior: auto !important;
   }
 }
