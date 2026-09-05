@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="futurista">
+   <main>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Home</a></li>
+            <li><a href="#Quienes_Somos">Quienes Somos?</a></li>
+             <li><a href="#Mision">Mision</a></li>
+            <li><a href="#Plans">Plans & Services</a></li>
+            <li><a href="#Portafolio">Portafolio</a></li>
+            <li><a href="#Contactanos">Contactanos</a></li>
+        </ul>
+    </nav>
+
+    <div class = "bubble"></div>
+    <div class = "bubble"></div>
+    <div class = "bubble"></div>
+    <div class = "bubble"></div>
+    <div class = "bubble"></div>
+
+    <section id="inicio" class="Inicio">
+        <div class="logo">
+            <img src="assets/Logo.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <h1>TECNOLOGIA DEL FUTURO A TU ALCANCE</h1>
+            <p>Bienvenido a nuestra empresa, donde la innovación tecnológica transforma la vida cotidiana.</p>
+        </div>
+    </section>
+
+    <section id="Quienes_Somos" class="Informacion">
+        <div class="container-informacion">
+            <div class="portada-cuadrado">
+                <img src="assets/Portada2.png" alt="Quienes Somos">
+            </div>
+                <div class="card texto-izquierda">
+                    <h1>Quienes Somos?</h1>
+                    <p>Somos una empresa dedicada a ofrecer soluciones tecnológicas innovadoras.
+                </div>
+        </div>
+    </section>
+
+    <section id="Mision" class="Mision">
+        <div class="container-informacion">
+            <div class="portada-cuadrado">
+                <img src="assets/objetivo.png" alt="Mision">
+            </div>
+            <div class="card texto-derecha">
+                <h1>Mision!</h1>
+                <p>Nuestra misión es liderar la transformación digital proporcionando productos y servicios tecnológicos de vanguardia que impulsen la eficiencia, la conectividad y la innovación en todos los sectores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Plans" class="Plans & Services">
+        <div class="container-informacion">
+           <center><h1>Plans & Services</h1></center>
+           
+            <div class="cards-container">
+                <div class="card-plan">
+                    <h2>Aplicaciones Web</h2>
+                    <p>
+                        Optimiza tu trabajo.
+                        Desarrollamos
+                        aplicaciones web y de
+                        escritorio robustas y a
+                        medida para
+                        automatizar procesos y
+                        hacer tu negocio más
+                        eficiente.
+                    </p>
+                    <button>Choose Plan</button>
+                </div>
+                <div class="card-plan destacado">
+                    <h2>Desarrollo de movil</h2>
+                    <p>
+                        Lleva tu negocio a
+                        todas partes.
+                        Creamos aplicaciones
+                        móviles intuitivas y
+                        funcionales para iOS y
+                        Android que conectan
+                        con tus clientes en
+                        cualquier lugar y en
+                        cualquier momento.
+                    </p>
+                    <button>Choose Plan</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="Portafolio" class="Portafolio">
+        <div class="container-informacion">
+            <center><h1>APLICACIONES WEB</h1></center>
+            <div class="informacion-portafolio">
+                <ul>
+                    <li>Desarrollo de Plataformas Centradas en el Usuario (UX/UI)</li>
+                    <li>Sistemas Modulares y Escalables para la Solución de Problemas</li>
+                    <li>Integración de Tecnologías para la Automatización del Bienestar</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Contactanos" class="Contactanos">
+         <div class="logo-contacto">
+            <img src="assets/Logo.png" alt="Logo">
+        </div>
+        <div class="contact-info">
+           <form id="contacto-form">
+                <h2>Mensaje</h2>
+                <input type="text" placeholder="Nombre" name="nombre"  id="nombre" required>
+                <input type="email" placeholder="Correo Electronico" name="correo" id="correo" required>
+                <textarea name="notificacion" id="notificacion" placeholder="Escribe tu Mensaje"  required
+                 maxlength="500"></textarea>
+                <button type="submit">Enviar</button>
+              </form>
+        </div>
+        <div class="redes-sociales">
+            <a href="tel:+593995291323"onclick="Llamar()">Contactame<img src="assets/Contactos/Llmar.png" alt="Llmar"></a>
+            <a href="https://wa.me/593995291323" onclick="Whatsapp()">Whatsapp<img src="assets/Contactos/whatsapp.png" alt="whatsapp"></a>
+            <a href="mailto:yepez3699@gmail.com" onclick="Correo()">Correo Electronico<img src="assets/Contactos/correo.png" alt="correo"></a>
+        </div>
+    </section>
+   </main>
+   <footer>
+        <p>Derechos reservados © 2026</p>
+    </footer>
+
+
+<script>
+const colors = ['rgba(0,195,255,0.3)','rgba(255,0,255,0.3)','rgba(0,255,128,0.3)','rgba(255,255,0,0.3)','rgba(0,128,255,0.3)'];
+
+for(let i=0;i<40;i++){
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    const size = Math.floor(Math.random() * 60) + 20;
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.background = colors[Math.floor(Math.random()*colors.length)];
+    bubble.style.opacity = Math.random() * 0.4 + 0.1;
+    bubble.style.animationDuration = (Math.random()*15 + 10) + 's';
+    bubble.style.animationDelay = Math.random()*10 + 's';
+    document.body.appendChild(bubble);
+
+    // Animación de cambio de tamaño y opacidad
+    bubble.animate([
+        { transform: 'scale(1)', opacity: bubble.style.opacity },
+        { transform: 'scale(' + (Math.random()*1.5+0.5) + ')', opacity: Math.random() },
+        { transform: 'scale(1)', opacity: bubble.style.opacity }
+    ], {
+        duration: (Math.random()*5000+5000),
+        iterations: Infinity,
+        direction: 'alternate'
+    });
+
+    // Animación de cambio de color
+    setInterval(() => {
+        bubble.style.background = colors[Math.floor(Math.random()*colors.length)];
+    }, 3000 + Math.random()*2000);
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
