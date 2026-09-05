@@ -2142,3 +2142,124 @@ footer {
   }
 
 }
+/* =========================================================
+   BOTÓN GITHUB
+   ========================================================= */
+
+.github-btn {
+  width: min(220px, 100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 13px 25px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    #00c3ff,
+    #0066ff,
+    #8a2be2
+  );
+
+  border: 1px solid rgba(0, 255, 255, 0.5);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 15px rgba(0, 195, 255, 0.35),
+    0 0 30px rgba(138, 43, 226, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.github-btn img {
+  width: 28px;
+  height: 28px;
+
+  object-fit: contain;
+
+  filter:
+    brightness(0)
+    invert(1);
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.github-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  background: linear-gradient(
+    90deg,
+    #00fff0,
+    #00c3ff,
+    #8a2be2
+  );
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.55),
+    0 0 40px rgba(138, 43, 226, 0.35);
+}
+
+.github-btn:hover img {
+  transform: rotate(8deg) scale(1.15);
+
+  filter:
+    brightness(0)
+    invert(1)
+    drop-shadow(0 0 8px #ffffff);
+}
+
+.github-btn:active {
+  transform: scale(0.97);
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+  .github-btn {
+    width: min(200px, 90%);
+
+    padding: 12px 20px;
+
+    font-size: 0.9rem;
+  }
+
+  .github-btn img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 400px) {
+
+  .github-btn {
+    width: 180px;
+
+    padding: 11px 18px;
+
+    font-size: 0.85rem;
+  }
+
+  .github-btn img {
+    width: 22px;
+    height: 22px;
+  }
+}
