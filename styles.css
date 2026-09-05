@@ -1,70 +1,32 @@
-/* =========================================
-   RESPONSIVE GENERAL
-   CELULARES, TABLETS, LAPTOPS Y PC
-========================================= */
-
-/* Evita que textos e imágenes se salgan */
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Las imágenes nunca deben salirse de su contenedor */
-img {
-    max-width: 100%;
-    height: auto;
-}
+/* =====================================================
+   RESPONSIVE - ADAPTACIÓN PARA TODOS LOS DISPOSITIVOS
+   NO MODIFICA EL DISEÑO ORIGINAL
+===================================================== */
 
 
-/* =========================================
-   PC / PANTALLAS GRANDES
-   1200px EN ADELANTE
-========================================= */
+/* =====================================================
+   TABLETS Y LAPTOPS PEQUEÑAS
+===================================================== */
 
-@media (min-width: 1200px) {
-
-    .container-informacion {
-        max-width: 1150px;
-    }
-
-    .cards-container {
-        gap: 50px;
-    }
-
-    .card-plan {
-        width: 360px;
-    }
-
-}
-
-
-/* =========================================
-   LAPTOP
-   769px - 1199px
-========================================= */
-
-@media (min-width: 769px) and (max-width: 1199px) {
+@media screen and (max-width: 1024px) {
 
     section {
-        padding: 110px 5% 70px;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .container-informacion {
-        max-width: 950px;
-    }
-
-    .search-bar h1 {
-        font-size: 40px;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
     }
 
     .Inicio {
         gap: 40px;
     }
 
-    .logo img {
-        width: 220px;
+    .search-bar h1 {
+        font-size: 40px;
     }
 
     .cards-container {
@@ -78,98 +40,128 @@ img {
 }
 
 
-/* =========================================
+/* =====================================================
    TABLETS
-   481px - 768px
-========================================= */
+===================================================== */
 
-@media (min-width: 481px) and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 
     section {
-        min-height: auto;
-        padding: 120px 6% 70px;
+        padding-top: 110px;
+        padding-bottom: 70px;
     }
 
-    /* NAV */
+
+    /* ---------- MENÚ ---------- */
+
     nav ul {
-        gap: 15px;
-        padding: 15px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 12px 10px;
     }
 
     nav ul li a {
         font-size: 13px;
     }
 
-    /* INICIO */
-    .Inicio {
-        min-height: 100vh;
 
+    /* ---------- INICIO ---------- */
+
+    .Inicio {
         flex-direction: column;
+        justify-content: center;
 
         text-align: center;
 
-        gap: 35px;
+        gap: 30px;
     }
 
     .logo img {
         width: 220px;
+        max-width: 70vw;
     }
 
     .search-bar {
-        max-width: 600px;
+        width: 100%;
+        max-width: 650px;
     }
 
     .search-bar h1 {
         font-size: 36px;
+        line-height: 1.2;
     }
 
     .search-bar p {
         font-size: 17px;
     }
 
-    /* QUIENES SOMOS / MISIÓN */
+
+    /* ---------- QUIENES SOMOS ---------- */
+
     .Informacion .container-informacion,
     .Mision .container-informacion {
+
         flex-direction: column;
-        gap: 35px;
+
+        gap: 30px;
+
+        width: 100%;
     }
 
-    .portada-cuadrado,
-    .card {
+    .portada-cuadrado {
         width: 100%;
+        text-align: center;
     }
 
     .portada-cuadrado img {
-        display: block;
-        margin: auto;
+        width: 100%;
         max-width: 500px;
     }
 
-    /* PLANES */
+    .card {
+        width: 100%;
+        max-width: 650px;
+    }
+
+
+    /* ---------- PLANES ---------- */
+
     .cards-container {
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .card-plan {
-        width: 100%;
-        max-width: 420px;
+        width: 45%;
+        min-width: 280px;
+        max-width: 360px;
     }
 
-    /* PORTAFOLIO */
+
+    /* ---------- PORTAFOLIO ---------- */
+
+    .informacion-portafolio {
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+    }
+
     .Portafolio h1,
     .movil h1 {
         font-size: 32px;
     }
 
-    .informacion-portafolio {
-        padding: 30px;
-    }
 
-    /* CONTACTO */
+    /* ---------- CONTACTO ---------- */
+
     .Contactanos {
-        flex-direction: column;
-        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .contact-info {
@@ -180,36 +172,22 @@ img {
 }
 
 
-/* =========================================
+/* =====================================================
    CELULARES
-   320px - 480px
-========================================= */
+===================================================== */
 
-@media (max-width: 480px) {
-
-    /* GENERAL */
+@media screen and (max-width: 600px) {
 
     section {
-        min-height: auto;
-
-        padding: 110px 20px 60px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 
-    /* =====================================
-       NAVBAR
-    ===================================== */
+    /* ---------- MENÚ ---------- */
 
     nav ul {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
-        gap: 8px;
-
-        padding: 12px 8px;
+        gap: 6px 10px;
     }
 
     nav ul li a {
@@ -217,82 +195,39 @@ img {
     }
 
 
-    /* =====================================
-       INICIO
-    ===================================== */
+    /* ---------- INICIO ---------- */
 
     .Inicio {
-
         min-height: 100vh;
 
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-
-        text-align: center;
+        padding-top: 130px;
 
         gap: 25px;
     }
 
     .logo img {
-        width: 160px;
-    }
-
-    .search-bar {
-        width: 100%;
+        width: 170px;
     }
 
     .search-bar h1 {
-        font-size: 27px;
-
-        line-height: 1.2;
+        font-size: 29px;
     }
 
     .search-bar p {
         font-size: 15px;
-
         line-height: 1.6;
     }
 
 
-    /* =====================================
-       QUIENES SOMOS
-    ===================================== */
+    /* ---------- QUIENES SOMOS / MISIÓN ---------- */
 
     .Informacion .container-informacion,
     .Mision .container-informacion {
-
-        flex-direction: column;
-
         gap: 25px;
-
-        width: 100%;
-    }
-
-    .portada-cuadrado {
-        width: 100%;
-    }
-
-    .portada-cuadrado img {
-
-        display: block;
-
-        width: 100%;
-
-        max-width: 350px;
-
-        margin: auto;
     }
 
     .card {
-
-        width: 100%;
-
         padding: 25px 20px;
-
-        border-radius: 15px;
     }
 
     .card h1 {
@@ -301,43 +236,29 @@ img {
 
     .card p {
         font-size: 15px;
-
         line-height: 1.6;
     }
 
 
-    /* =====================================
-       PLANS
-    ===================================== */
+    /* ---------- PLANES ---------- */
 
     .Plans h1 {
         font-size: 30px;
-
-        margin-bottom: 30px;
     }
 
     .cards-container {
-
-        display: flex;
-
         flex-direction: column;
-
         align-items: center;
 
         gap: 25px;
     }
 
     .card-plan {
-
         width: 100%;
-
-        max-width: 350px;
-
-        min-height: auto;
+        min-width: 0;
+        max-width: 370px;
 
         padding: 25px 20px;
-
-        border-radius: 18px;
     }
 
     .card-plan h2 {
@@ -345,178 +266,123 @@ img {
     }
 
     .card-plan p {
-
         font-size: 15px;
-
         line-height: 1.6;
-
-        margin-bottom: 25px;
-    }
-
-    .card-plan a {
-        display: block;
     }
 
     .card-plan button {
-
         width: 100%;
-
-        padding: 12px;
     }
 
 
-    /* =====================================
-       PORTAFOLIO
-    ===================================== */
+    /* ---------- PORTAFOLIO WEB ---------- */
 
-    .Portafolio h1,
-    .movil h1 {
-
+    .Portafolio h1 {
         font-size: 27px;
-
         line-height: 1.2;
-
-        margin-bottom: 25px;
     }
 
     .informacion-portafolio {
-
-        width: 100%;
-
         padding: 25px 20px;
-
-        border-radius: 15px;
-    }
-
-    .informacion-portafolio p {
-
-        font-size: 15px;
-
-        line-height: 1.7;
     }
 
     .informacion-portafolio li {
-
         font-size: 14px;
-
-        line-height: 1.6;
-
-        padding: 10px 5px 10px 28px;
+        line-height: 1.5;
     }
 
 
-    /* =====================================
-       CONTACTO
-    ===================================== */
+    /* ---------- PORTAFOLIO MÓVIL ---------- */
+
+    .movil h1 {
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .movil .informacion-portafolio {
+        padding: 25px 20px;
+    }
+
+    .movil .informacion-portafolio p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .movil .informacion-portafolio li {
+        font-size: 14px;
+    }
+
+
+    /* ---------- CONTACTO ---------- */
 
     .Contactanos {
-
-        display: flex;
-
         flex-direction: column;
 
         gap: 30px;
-
-        width: 100%;
     }
 
     .logo-contacto img {
-
         width: 150px;
     }
 
     .contact-info {
-
         width: 100%;
+        max-width: 400px;
     }
 
     #contacto-form {
-
         width: 100%;
-
-        padding: 20px;
-
-        border-radius: 15px;
-    }
-
-    #contacto-form h2 {
-        font-size: 24px;
     }
 
     #contacto-form input,
     #contacto-form textarea {
-
-        font-size: 14px;
-
-        padding: 12px;
+        width: 100%;
     }
 
     #contacto-form button {
-
         width: 100%;
     }
 
 
-    /* =====================================
-       REDES SOCIALES
-    ===================================== */
+    /* ---------- REDES SOCIALES ---------- */
 
     .redes-sociales {
-
         width: 100%;
-
         max-width: 350px;
-    }
-
-    .redes-sociales a {
-
-        width: 100%;
-
-        font-size: 14px;
-
-        padding: 10px 15px;
-    }
-
-    .redes-sociales img {
-
-        width: 30px;
-
-        height: 30px;
-    }
-
-
-    /* =====================================
-       FOOTER
-    ===================================== */
-
-    footer {
-
-        font-size: 13px;
-
-        padding: 20px;
     }
 
 }
 
 
-/* =========================================
-   CELULARES MUY PEQUEÑOS
-   320px - 360px
-========================================= */
+/* =====================================================
+   CELULARES PEQUEÑOS
+   320px - 400px
+===================================================== */
 
-@media (max-width: 360px) {
+@media screen and (max-width: 400px) {
 
     section {
         padding-left: 15px;
         padding-right: 15px;
     }
 
+
+    /* Menú */
+
     nav ul {
-        gap: 5px;
+        gap: 5px 7px;
+        padding: 10px 5px;
     }
 
     nav ul li a {
         font-size: 10px;
+    }
+
+
+    /* Inicio */
+
+    .logo img {
+        width: 140px;
     }
 
     .search-bar h1 {
@@ -527,21 +393,42 @@ img {
         font-size: 14px;
     }
 
-    .logo img {
-        width: 140px;
-    }
+
+    /* Cards */
 
     .card-plan {
-        padding: 20px 15px;
+        padding: 22px 17px;
     }
 
     .card-plan h2 {
         font-size: 21px;
     }
 
+    .card-plan p {
+        font-size: 14px;
+    }
+
+
+    /* Portafolio */
+
     .Portafolio h1,
     .movil h1 {
         font-size: 24px;
+    }
+
+    .informacion-portafolio {
+        padding: 20px 15px;
+    }
+
+    .informacion-portafolio li {
+        font-size: 13px;
+    }
+
+
+    /* Contacto */
+
+    #contacto-form {
+        padding: 20px 15px;
     }
 
 }
